@@ -24,6 +24,10 @@ public class PublicacionController {
     public List<DatosListadoPublicacion> listarPublicaciones(){
        //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
         return publicacionRepository.findByActivoTrue().stream().map(DatosListadoPublicacion::new).toList();
+    }@GetMapping("/listar/favoritos")
+    public List<DatosListadoPublicacion> listarPublicacionesFavoritas(){
+        //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
+        return publicacionRepository.findByFavoritosTrue().stream().map(DatosListadoPublicacion::new).toList();
     }
 
     @PutMapping("/actualizar")
@@ -31,6 +35,12 @@ public class PublicacionController {
     public void actualizarPublicacion(@RequestBody DatosActualizarPublicacion datosActualizarPublicacion){
         Publicacion publicacion = publicacionRepository.getReferenceById(datosActualizarPublicacion.idpublicaciones());
         publicacion.actualizarDatos(datosActualizarPublicacion);
+    }
+    @PutMapping("/favoritos/{idpublicaciones}")
+    @Transactional
+    public void publicacionfavoritos(@PathVariable Long idpublicaciones){
+        Publicacion publicacion = publicacionRepository.getReferenceById(idpublicaciones);
+        publicacion.nuevoFavorito();
     }
 
     @DeleteMapping("/borrar/{idpublicaciones}")

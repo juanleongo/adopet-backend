@@ -24,12 +24,15 @@ public class Publicacion {
     private String descripcion;
     @Enumerated(EnumType.STRING)
     private Aptitud aptitud;
-    private boolean activo;
     private String fechaPublicacion;
+    private boolean activo;
+    private boolean favoritos;
+
 
 
     public Publicacion(DatosRegistroPublicacion datosRegistroPublicacion) {
         this.activo = true;
+        this.favoritos = false;
         this.nombreMascota = datosRegistroPublicacion.nombreMascota();
         this.edad = datosRegistroPublicacion.edad();
         this.genero = datosRegistroPublicacion.genero();
@@ -50,5 +53,9 @@ public class Publicacion {
 
     public void desactivarPublicacion() {
         this.activo=false;
+    }
+
+    public void nuevoFavorito() {
+        this.favoritos=true;
     }
 }
