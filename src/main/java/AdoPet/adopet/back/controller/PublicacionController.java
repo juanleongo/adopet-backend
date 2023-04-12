@@ -64,4 +64,11 @@ public class PublicacionController {
         Publicacion publicacion = publicacionRepository.getReferenceById(idpublicaciones);
         publicacion.desactivarPublicacion();
     }
+
+    @DeleteMapping("/favoritos/borrar/{idpublicaciones}")
+    @Transactional
+    public void eliminarFavorito(@PathVariable Long idpublicaciones){
+        Publicacion publicacion = publicacionRepository.getReferenceById(idpublicaciones);
+        publicacion.desactivarFavorito();
+    }
 }

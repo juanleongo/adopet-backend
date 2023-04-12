@@ -70,4 +70,8 @@ public class Publicacion {
     public void actualizarEstado(DatosActualizarEstado datosActualizarEstado) {
         this.estado=datosActualizarEstado.estado();
     }
+
+    public void desactivarFavorito() {
+        this.favoritos=false;
+    }
 }
