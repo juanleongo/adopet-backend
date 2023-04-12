@@ -1,9 +1,9 @@
 package AdoPet.adopet.back.publicacion;
 
-public record DatosListadoPublicacion(Long idpublicaciones, String nombre , String aptitud, String edad, String especie, String genero) {
+public record DatosListadoPublicacion(Long idpublicaciones, String nombre ,String edad, String genero,String especie, String ubicacion,String descripcion, String aptitud ) {
 
     public DatosListadoPublicacion(Publicacion publicacion){
-        this(publicacion.getIdpublicaciones(), publicacion.getNombreMascota(), publicacion.getEdad(), publicacion.getEspecie(), publicacion.getGenero(), publicacion.getAptitud().toString() );
+        this(publicacion.getIdpublicaciones(), publicacion.getNombreMascota(), publicacion.getEdad(),publicacion.getGenero(), publicacion.getEspecie(),publicacion.getUbicacion() ,publicacion.getDescripcion(), publicacion.getAptitud().toString() );
     }
 
 }
