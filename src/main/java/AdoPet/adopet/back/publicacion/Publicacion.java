@@ -1,5 +1,6 @@
 package AdoPet.adopet.back.publicacion;
 
+import AdoPet.adopet.back.perfil.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -28,6 +29,9 @@ public class Publicacion {
     private boolean activo;
     private boolean favoritos;
     private  String estado;
+    private  String imagen;
+
+
 
 
 
@@ -43,6 +47,7 @@ public class Publicacion {
         this.descripcion=datosRegistroPublicacion.descripcion();
         this.estado =datosRegistroPublicacion.estado();
         this.fechaPublicacion=datosRegistroPublicacion.fechaPublicacion();
+
     }
 
     public void actualizarDatos(DatosActualizarPublicacion datosActualizarPublicacion) {

@@ -24,10 +24,16 @@ public class PublicacionController {
     public List<DatosListadoPublicacion> listarPublicaciones(){
        //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
         return publicacionRepository.findByActivoTrue().stream().map(DatosListadoPublicacion::new).toList();
-    }@GetMapping("/listar/favoritos")
+    }
+    @GetMapping("/listar/favoritos")
     public List<DatosListadoPublicacion> listarPublicacionesFavoritas(){
         //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
         return publicacionRepository.findByFavoritosTrue().stream().map(DatosListadoPublicacion::new).toList();
+    }
+    @GetMapping("/ultimo")
+    public List<DatosListadoPublicacion> listarUltimaPublicacion(){
+        //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
+        return publicacionRepository.findByLastPublicacion().stream().map(DatosListadoPublicacion::new).toList();
     }
 
     @PutMapping("/actualizar")
