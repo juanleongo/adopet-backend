@@ -21,7 +21,8 @@ public record DatosRegistroPublicacion(@NotBlank
                                        @NotNull
                                    Aptitud aptitud,
                                        String fechaPublicacion,
-                                       String estado
+                                       String estado,
+                                       String imagen
 
 
 

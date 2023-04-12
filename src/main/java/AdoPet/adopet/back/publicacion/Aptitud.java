@@ -2,5 +2,11 @@ package AdoPet.adopet.back.publicacion;
 
 public enum Aptitud {
     DORMILON,
-    JUGETON
+    JUGUETON,
+    AMABLE,
+    AMOROSO,
+    TRAVIESO,
+    EXPLORADOR,
+    ADORABLE,
+    CONSENTIDO
 }

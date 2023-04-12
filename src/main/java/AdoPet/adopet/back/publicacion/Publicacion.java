@@ -7,6 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.lang.reflect.Array;
+
 @Table(name = "publicaciones")
 @Entity(name = "Publicacion")
 @Getter
@@ -29,7 +31,8 @@ public class Publicacion {
     private boolean activo;
     private boolean favoritos;
     private  String estado;
-    private  String imagen;
+
+    private String imagen;
 
 
 
@@ -47,15 +50,16 @@ public class Publicacion {
         this.descripcion=datosRegistroPublicacion.descripcion();
         this.estado =datosRegistroPublicacion.estado();
         this.fechaPublicacion=datosRegistroPublicacion.fechaPublicacion();
+        this.imagen=datosRegistroPublicacion.imagen();
 
     }
 
     public void actualizarDatos(DatosActualizarPublicacion datosActualizarPublicacion) {
-        if(datosActualizarPublicacion.nombre() != null){
-            this.nombreMascota=datosActualizarPublicacion.nombre();
-        }
-        if(datosActualizarPublicacion.ubicacion() != null){
-            this.ubicacion=datosActualizarPublicacion.ubicacion();
+       // if(datosActualizarPublicacion.nombre() != null){
+         //   this.nombreMascota=datosActualizarPublicacion.nombre();
+        //}
+        if(datosActualizarPublicacion.imagen() != null){
+            this.imagen=datosActualizarPublicacion.imagen();
         }
     }
 
