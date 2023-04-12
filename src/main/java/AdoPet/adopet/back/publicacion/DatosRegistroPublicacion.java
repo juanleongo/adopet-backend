@@ -19,5 +19,6 @@ public record DatosRegistroPublicacion(@NotBlank
 
                                        @NotNull
                                    Aptitud aptitud
+
                                    ) {
 }

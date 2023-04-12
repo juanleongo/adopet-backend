@@ -22,7 +22,8 @@ public class PublicacionController {
 
     @GetMapping("/listar")
     public List<DatosListadoPublicacion> listarPublicaciones(){
-        return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
+       //return publicacionRepository.findAll().stream().map(DatosListadoPublicacion::new).toList();
+        return publicacionRepository.findByActivoTrue().stream().map(DatosListadoPublicacion::new).toList();
     }
 
     @PutMapping("/actualizar")
@@ -32,7 +33,7 @@ public class PublicacionController {
         publicacion.actualizarDatos(datosActualizarPublicacion);
     }
 
-    @DeleteMapping("/borrar")
+    @DeleteMapping("/borrar/{idpublicaciones}")
     @Transactional
     public void eliminarPublicacion(@PathVariable Long idpublicaciones){
         Publicacion publicacion = publicacionRepository.getReferenceById(idpublicaciones);

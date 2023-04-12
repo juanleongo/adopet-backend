@@ -25,6 +25,7 @@ public class Publicacion {
     @Enumerated(EnumType.STRING)
     private Aptitud aptitud;
     private boolean activo;
+    private String fechaPublicacion;
 
 
     public Publicacion(DatosRegistroPublicacion datosRegistroPublicacion) {
