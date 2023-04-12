@@ -23,6 +23,10 @@ public class PerfilController {
     public List<DatosListadoPerfil> listarPerfil(){
         return perfilRepository.findAll().stream().map(DatosListadoPerfil::new).toList();
     }
+    @GetMapping("/ultimo")
+    public List<DatosListadoPerfil> listarUltimo(){
+        return perfilRepository.findByLastPublicacion().stream().map(DatosListadoPerfil::new).toList();
+    }
     @PutMapping("/actualizar")
     @Transactional
     public void actualizarPerfil(@RequestBody DatosActualizarPerfil datosActualizarPerfil){
