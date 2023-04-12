@@ -35,6 +35,13 @@ public class PublicacionController {
     public void actualizarPublicacion(@RequestBody DatosActualizarPublicacion datosActualizarPublicacion){
         Publicacion publicacion = publicacionRepository.getReferenceById(datosActualizarPublicacion.idpublicaciones());
         publicacion.actualizarDatos(datosActualizarPublicacion);
+
+    }
+    @PutMapping("/estado")
+    @Transactional
+    public void publicacionEstado(@RequestBody DatosActualizarEstado datosActualizarEstado){
+        Publicacion publicacion = publicacionRepository.getReferenceById(datosActualizarEstado.idpublicaciones());
+        publicacion.actualizarEstado(datosActualizarEstado);
     }
     @PutMapping("/favoritos/{idpublicaciones}")
     @Transactional
@@ -42,6 +49,8 @@ public class PublicacionController {
         Publicacion publicacion = publicacionRepository.getReferenceById(idpublicaciones);
         publicacion.nuevoFavorito();
     }
+
+
 
     @DeleteMapping("/borrar/{idpublicaciones}")
     @Transactional

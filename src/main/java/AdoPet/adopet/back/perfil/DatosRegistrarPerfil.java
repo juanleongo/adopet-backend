@@ -13,8 +13,8 @@ public record DatosRegistrarPerfil(@NotBlank
                                    String telefono,
                                    @NotBlank
                                    String ciudad,
-                                   String fecha_de_nacimiento,
-                                   String intereses_mascotas,
+                                   String fechaDeNacimiento,
+                                   String interesesMascotas,
                                    String contrasena
 
 ) {

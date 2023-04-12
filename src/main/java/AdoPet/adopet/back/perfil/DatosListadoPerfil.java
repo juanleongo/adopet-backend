@@ -1,7 +1,7 @@
 package AdoPet.adopet.back.perfil;
 
-public record DatosListadoPerfil( Long idperfil, String nombre, String correo, String telefono, String ciudad, String fecha_de_nacimiento, String intereses_mascotas) {
+public record DatosListadoPerfil( Long idperfil, String nombre, String correo, String telefono, String ciudad, String fechaDeNacimiento, String interesesMascotas) {
     public DatosListadoPerfil(Perfil perfil){
-        this(perfil.getIdperfil(), perfil.getNombre(), perfil.getCorreo(), perfil.getTelefono(), perfil.getCiudad(), perfil.getFecha_de_nacimiento(), perfil.getIntereses_mascotas() );
+        this(perfil.getIdperfil(), perfil.getNombre(), perfil.getCorreo(), perfil.getTelefono(), perfil.getCiudad(), perfil.getFechaDeNacimiento(), perfil.getInteresesMascotas() );
     }
 }

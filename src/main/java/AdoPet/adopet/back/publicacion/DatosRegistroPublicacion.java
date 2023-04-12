@@ -18,7 +18,10 @@ public record DatosRegistroPublicacion(@NotBlank
                                        String descripcion,
 
                                        @NotNull
-                                   Aptitud aptitud
+                                   Aptitud aptitud,
+                                       String fechaPublicacion,
+                                       String estado
+
 
                                    ) {
 }

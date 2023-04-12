@@ -21,8 +21,8 @@ import lombok.NoArgsConstructor;
         private String correo;
         private String telefono;
         private String ciudad;
-        private String fecha_de_nacimiento;
-        private String intereses_mascotas;
+        private String fechaDeNacimiento;
+        private String interesesMascotas;
         private String contrasena;
         private boolean activo;
 
@@ -32,8 +32,8 @@ import lombok.NoArgsConstructor;
             this.correo = datosRegistrarPerfil.correo();
             this.telefono = datosRegistrarPerfil.telefono();
             this.ciudad = datosRegistrarPerfil.ciudad();
-            this.fecha_de_nacimiento = datosRegistrarPerfil.fecha_de_nacimiento();
-            this.intereses_mascotas = datosRegistrarPerfil.intereses_mascotas();
+            this.fechaDeNacimiento = datosRegistrarPerfil.fechaDeNacimiento();
+            this.interesesMascotas = datosRegistrarPerfil.interesesMascotas();
             this.contrasena = datosRegistrarPerfil.contrasena();
         }
 
@@ -41,8 +41,8 @@ import lombok.NoArgsConstructor;
             if(datosActualizarPerfil.telefono() != null){
                 this.telefono=datosActualizarPerfil.telefono();
             }
-            if(datosActualizarPerfil.intereses_mascotas() != null){
-                this.intereses_mascotas=datosActualizarPerfil.intereses_mascotas();
+            if(datosActualizarPerfil.interesesMascotas() != null){
+                this.interesesMascotas=datosActualizarPerfil.interesesMascotas();
             }
         }
 
